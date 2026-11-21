@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 14px; color: #202124; margin: 0; background: #f8f9fa; }
+.container { max-width: 720px; margin: 24px auto; padding: 0 18px; }
+h1 { font-size: 24px; margin: 0 0 4px 0; font-weight: 600; }
+.subtitle { color: #5f6368; font-size: 13px; margin-bottom: 20px; }
+.card { background: #fff; border: 1px solid #dadce0; border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+.card h3 { margin: 0 0 12px 0; font-size: 16px; font-weight: 600; }
+label { display: block; font-size: 13px; font-weight: 500; color: #3c4043; margin-bottom: 6px; }
+label span { cursor: pointer; }
+input[type="text"], input[type="password"], select, textarea { width: 100%; padding: 8px 10px; border: 1px solid #dadce0; border-radius: 6px; font-size: 13px; background: #fff; }
+textarea { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; min-height: 120px; resize: vertical; }
+input[list] { padding-right: 30px; }
+.row { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+.btnrow { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
+.btn { padding: 8px 14px; border: 1px solid transparent; border-radius: 6px; font-size: 13.5px; font-weight: 500; cursor: pointer; }
+.btn.primary { background: #1a73e8; color: #fff; }
+.btn.primary:hover { background: #1557b0; }
+.btn { background: #f1f3f4; color: #3c4043; border-color: #dadce0; }
+.btn:hover { background: #e8eaed; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.status { margin-left: 10px; font-size: 12.5px; min-height: 16px; }
+code { background: #eef; padding: 1px 4px; border-radius: 3px; font-size: 12px; color: #6200ee; }
+kbd { background: #eef; padding: 1px 4px; border-radius: 3px; font-family: monospace; font-size: 12px; }

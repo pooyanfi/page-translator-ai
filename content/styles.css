@@ -1,0 +1,14 @@
+/* AI Page Translator — styles injected into translated pages.
+ *
+ * Direction is applied per translated block, not to <html>: a whole-page
+ * direction flip broke centred layouts and turned code blocks around. Each
+ * block isolates its own bidi run so a Latin brand name inside a Persian
+ * sentence cannot reorder the surrounding punctuation.
+ */
+.aipt-translated-block {
+  unicode-bidi: isolate;
+}
+
+.aipt-translated-selection {
+  unicode-bidi: isolate;
+}

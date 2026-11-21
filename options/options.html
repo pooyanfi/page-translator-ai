@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Options — AI Page Translator</title>
+<link rel="stylesheet" href="options.css">
+<script src="../content/languages.js"></script>
+<script src="../content/providers.js"></script>
+<script src="options.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <h1>AI Page Translator — Options</h1>
+  <p class="subtitle">Bring your own API key, or run a local model with Ollama. Nothing is sent to any backend; keys stay in this browser only.</p>
+
+  <div class="card">
+    <h3>AI Provider</h3>
+    <label>Provider
+      <select id="provider">
+        <option value="ollama">Ollama (local, http://localhost:11434)</option>
+        <option value="gemini">Google Gemini (generativelanguage.googleapis.com)</option>
+        <option value="openai">OpenAI-compatible endpoint (OpenRouter, Groq, OpenAI, etc.)</option>
+      </select>
+    </label>
+    <label>API key
+      <input type="password" id="apiKey" placeholder="sk-… or your Gemini key">
+    </label>
+    <div class="row"><button id="toggleKey" class="btn">Show</button></div>
+    <label>Model name
+      <input type="text" id="model" placeholder="exact model ID from your provider" list="modelSuggestions">
+      <datalist id="modelSuggestions"></datalist>
+    </label>
+    <label>Base URL
+      <input type="text" id="baseUrl" placeholder="https://integrate.api.nvidia.com/v1  (OpenAI-compatible only)">
+    </label>
+    <label>Source language
+      <select id="sourceLanguage"></select>
+    </label>
+    <label>Default target language
+      <select id="targetLanguage"></select>
+    </label>
+    <label>Translation style
+      <select id="style">
+        <option value="natural">Natural — reads like native writing (recommended)</option>
+        <option value="literal">Literal — stays close to the source wording</option>
+      </select>
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;">
+      <input type="checkbox" id="qualityMode"> <span>Quality mode (second pass that reviews every segment against the source)</span>
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;">
+      <input type="checkbox" id="autoTranslate"> <span>Auto-translate on load when a per-site preference exists</span>
+    </label>
+    <div class="btnrow"><button id="btnTest" class="btn">Test connection</button> <span id="testStatus" class="status"></span></div>
+  </div>
+
+  <div class="card">
+    <h3>Glossary (fixed translations)</h3>
+    <p class="subtitle">One entry per line: <code>term → translation</code> (also accepts <code>-></code>, <code>=></code>, <code>=</code>, or TAB). Example: <code>API → API</code>, <code>homepage → صفحه اصلی</code>. Glossary entries are mandatory for the model.</p>
+    <textarea id="glossary" rows="8" placeholder="API → API
+download → دانلود
+sign in → ورود"></textarea>
+  </div>
+
+  <div class="card">
+    <h3>Per-site preferences</h3>
+    <p class="subtitle">Translate a site once, then reload — the extension remembers the target language per domain. With auto-translate on, future visits to that domain translate automatically.</p>
+    <div id="sitePrefsList"></div>
+    <div class="btnrow"><button id="btnClearSites" class="btn" style="display:none">Clear all</button></div>
+  </div>
+
+  <div class="actions">
+    <button id="btnSave" class="btn primary">Save settings</button>
+    <span id="saveStatus" class="status"></span>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h3>Keyboard shortcut</h3>
+    <p class="subtitle">Toggle translation: <kbd>Ctrl+Shift+Y</kbd> / <kbd>Cmd+Shift+Y</kbd>. Change it in your browser's <em>extension shortcuts page</em> (e.g. <code>brave://extensions/shortcuts</code>).</p>
+  </div>
+</div>
+</body>
+</html>

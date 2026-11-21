@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Account settings</title></head>
+<body>
+<div class="app">
+  <aside>
+    <a href="/dashboard">Overview</a>
+    <a href="/settings">Settings</a>
+    <a href="/billing">Billing</a>
+    <a href="/help">Help centre</a>
+  </aside>
+  <main>
+    <h1>Account settings</h1>
+    <p>Changes are saved automatically. Some options only apply after you <a href="/signout">sign out</a> and back in.</p>
+
+    <section>
+      <h2>Profile</h2>
+      <label>Display name <input type="text" placeholder="Your name"></label>
+      <label>Email <input type="email" placeholder="you@example.com"></label>
+      <button>Save changes</button>
+      <button>Cancel</button>
+    </section>
+
+    <section>
+      <h2>Notifications</h2>
+      <label><input type="checkbox"> Email me about new features</label>
+      <label><input type="checkbox"> Send a weekly summary</label>
+      <p>You can change these at any time. <a href="/privacy">Learn how we use your data</a>.</p>
+    </section>
+
+    <section>
+      <h2>Danger zone</h2>
+      <p>Deleting your account removes <strong>all projects</strong> and cannot be undone.</p>
+      <button>Delete account</button>
+    </section>
+  </main>
+</div>
+</body>
+</html>

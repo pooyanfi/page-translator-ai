@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Installing the CLI</title></head>
+<body>
+<main>
+  <h1>Installing the CLI</h1>
+  <p>You can install the tool with <code>npm install -g example-cli</code> or download a <a href="/releases">prebuilt binary</a>.</p>
+  <p>After installation, run <code>example init</code> in your project directory. The command creates a <code>config.json</code> file and prints the path.</p>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>Node.js 20 or newer</li>
+    <li>An API key from the <a href="/dashboard">dashboard</a></li>
+  </ul>
+
+  <h2>Configuration</h2>
+  <p>Open the configuration file and set the <code>apiKey</code> field. Do not commit this file to version control.</p>
+
+  <pre><code>{
+  "apiKey": "sk-...",
+  "region": "eu-west-1"
+}</code></pre>
+
+  <h2>Common problems</h2>
+  <table>
+    <thead><tr><th>Error</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>401</td><td>The key is missing or expired. Generate a <a href="/keys">new key</a>.</td></tr>
+      <tr><td>ECONNREFUSED</td><td>The local server is not running. Start it with <code>example serve</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Note:</strong> version 2 changed the default port from 8080 to <strong>3000</strong>.</p>
+</main>
+</body>
+</html>

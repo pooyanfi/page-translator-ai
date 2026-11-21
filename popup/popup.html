@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Page Translator</title>
+<link rel="stylesheet" href="popup.css">
+<script src="../content/languages.js"></script>
+<script src="../content/providers.js"></script>
+<script src="popup.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="../icons/icon-48.png" class="app-icon" alt="">
+    <div class="app-title">AI Page Translator</div>
+  </div>
+
+  <div class="section">
+    <label class="label">Target language</label>
+    <select id="targetLang"></select>
+  </div>
+
+  <div class="section">
+    <label class="label">Provider status</label>
+    <div id="status" class="status">Loading…</div>
+  </div>
+
+  <div class="section">
+    <span id="shortcutHint" class="shortcut-hint"></span>
+  </div>
+
+  <div class="actions">
+    <button id="btnTranslate" class="btn primary">Translate this page</button>
+    <button id="btnToggle" class="btn secondary" style="display:none">Show original</button>
+  </div>
+
+  <div id="progress" class="progress" style="display:none">
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <span id="progressText" class="progress-text">Translating…</span>
+  </div>
+
+  <div id="error" class="error" style="display:none"></div>
+
+  <div class="footer">
+    <button id="btnOptions" class="btn options-btn" style="display:none">Open Options</button>
+    <a id="optionsLink" class="options-link">Options & settings</a>
+    <div class="hint">API keys are stored locally only. Nothing is sent to any backend.</div>
+  </div>
+</div>
+</body>
+</html>

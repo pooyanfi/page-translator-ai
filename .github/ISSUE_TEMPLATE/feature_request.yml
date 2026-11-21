@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest a capability, a language, or a translation-quality improvement.
+title: '[feat] '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project stays deliberately small: no build step, no backend, no new permissions without a
+        reason. Proposals that fit that shape are much easier to accept.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you unable to do today, and on which kind of page?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: Describe the behaviour, not just the implementation.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Translation quality / prompt
+        - DOM handling, links and inline markup
+        - A new target language
+        - Provider support (Gemini, OpenAI-compatible, Ollama)
+        - Options or popup UI
+        - Documentation or translations
+        - Packaging and distribution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing workarounds, other extensions, or why they are not enough.
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: This can be built without a build step.
+        - label: This can be built without new browser permissions.
+        - label: This can be built without a server or account.
